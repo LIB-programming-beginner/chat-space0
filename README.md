@@ -36,8 +36,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false, if: :image = null end|
-|image|text|null: false, if: :text = null end|
+|text|text||
+|image|text||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
