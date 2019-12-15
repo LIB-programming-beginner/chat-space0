@@ -8,15 +8,17 @@
 
 ### Association
 - has_many :posts
+- has_many :groups_users
 - has_many :groups, through: :groups_users
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :posts
+- has_many :groups_users
 - has_many :users, through: :groups_users
 
 ## groups_usersテーブル
@@ -34,8 +36,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|image|text|null: false|
+|text|text|null: false, if: :image = null end|
+|image|text|null: false, if: :text = null end|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
